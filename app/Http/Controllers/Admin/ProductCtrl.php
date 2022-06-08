@@ -22,7 +22,7 @@ class ProductCtrl extends Controller
      */
     public function index()
     {
-        if (request()->ajax()) 
+        if (request()->ajax())
         {
             $query = Product::with(['user','category']);
 
@@ -81,7 +81,7 @@ class ProductCtrl extends Controller
         $data = $request->all();
 
         $data['slug'] = Str::slug($request->name);
-        
+
         Product::create($data);
 
         return redirect()->route('product.index');

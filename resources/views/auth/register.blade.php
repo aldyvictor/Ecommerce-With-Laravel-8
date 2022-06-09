@@ -201,14 +201,14 @@
                     })
             }
         },
-        data: {
-          name: "Angga Hazza Sett",
-          email: "kamujagoan@bws.id",
-          password: "",
-          is_store_open: true,
-          store_name: "",
-          email_unavailable: false,
-        },
+        // data: {
+        //   name: "Angga Hazza Sett",
+        //   email: "kamujagoan@bws.id",
+        //   password: "",
+        //   is_store_open: true,
+        //   store_name: "",
+        //   email_unavailable: false,
+        // },
       });
     </script>
 @endpush

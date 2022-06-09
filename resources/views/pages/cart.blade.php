@@ -46,11 +46,13 @@
                     @foreach ($carts as $itemCart)
                         <tr>
                             <td style="width: 20%">
+                            @if ($itemCart->product->galleries)
                             <img
                                 src="{{ Storage::url($itemCart->product->galleries->first()->photos) }}"
                                 alt=""
                                 class="cart-image"
                             />
+                            @endif
                             </td>
                             <td style="width: 35%">
                             <div class="product-title">{{ $itemCart->product->name }}</div>

@@ -19,6 +19,7 @@ Route::get('/categories/{id}', [App\Http\Controllers\CategoryCtrl::class, 'detai
 Route::get('/details/{id}', [App\Http\Controllers\DetailCtrl::class, 'index'])->name('detail');
 Route::post('/details/{id}', [App\Http\Controllers\DetailCtrl::class, 'addToCart'])->name('detail-add');
 Route::get('/cart', [App\Http\Controllers\CartCtrl::class, 'index'])->name('cart');
+Route::delete('/cart/{id}', [App\Http\Controllers\CartCtrl::class, 'delete'])->name('cart-delete');
 Route::get('/success', [App\Http\Controllers\CartCtrl::class, 'success'])->name('success');
 Route::get('/success', [App\Http\Controllers\CartCtrl::class, 'success'])->name('success');
 

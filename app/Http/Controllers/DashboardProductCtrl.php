@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,7 @@ class DashboardProductCtrl extends Controller
 
     public function create()
     {
-        return view('pages.dashboard-products-create');
+        $categories = Category::all();
+        return view('pages.dashboard-products-create', ['categories' => $categories]);
     }
 }

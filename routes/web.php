@@ -35,12 +35,19 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/dashboard/products', [App\Http\Controllers\DashboardProductCtrl::class, 'index'])
         ->name('dashboard-products');
-    Route::get('/dashboard/product/create', [App\Http\Controllers\DashboardProductCtrl::class, 'create'])
+    Route::get('/dashboard/products/create', [App\Http\Controllers\DashboardProductCtrl::class, 'create'])
         ->name('dashboard-product-create');
-    Route::post('/dashboard/product', [App\Http\Controllers\DashboardProductCtrl::class, 'store'])
+    Route::post('/dashboard/products', [App\Http\Controllers\DashboardProductCtrl::class, 'store'])
         ->name('dashboard-product-store');
-    Route::get('/dashboard/product/{id}', [App\Http\Controllers\DashboardProductCtrl::class, 'details'])
+    Route::get('/dashboard/products/{id}', [App\Http\Controllers\DashboardProductCtrl::class, 'details'])
         ->name('dashboard-product-details');
+    Route::post('/dashboard/products/{id}', [App\Http\Controllers\DashboardProductCtrl::class, 'update'])
+        ->name('dashboard-product-update');
+
+    Route::post('/dashboard/products/gallery/upload', [App\Http\Controllers\DashboardProductCtrl::class, 'uploadGallery'])
+        ->name('dashboard-product-upload-gallery');
+    Route::get('/dashboard/products/gallery/delete/{id}', [App\Http\Controllers\DashboardProductCtrl::class, 'deleteGallery'])
+        ->name('dashboard-product-gallery-delete');
 
     Route::get('/dashboard/transactions', [App\Http\Controllers\DashboardTransactionsCtrl::class, 'index'])
         ->name('dashboard-transactions');

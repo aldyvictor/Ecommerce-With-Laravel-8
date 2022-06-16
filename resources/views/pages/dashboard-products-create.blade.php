@@ -19,22 +19,22 @@
         <div class="dashboard-content">
         <div class="row">
             <div class="col-12">
-            <form action="{{ route('dashboard-product-create') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('dashboard-product-store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <div class="card">
                 <div class="card-body">
                     <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                         <label for="">Product Name</label>
-                        <input type="text" class="form-control" name="product_name"/>
+                        <input type="text" class="form-control" name="name"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                         <label for="">Price</label>
-                        <input type="number" class="form-control" name="product_price"/>
+                        <input type="number" class="form-control" name="price"/>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -56,7 +56,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                         <label for="">Thumbnails</label>
-                        <input type="file" name="product_photo" class="form-control" />
+                        <input type="file" name="photos" class="form-control" />
                         <p class="text-muted">
                             Kamu dapat memilih lebih dari satu file
                         </p>
